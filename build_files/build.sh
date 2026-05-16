@@ -10,8 +10,13 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux 
-
+dnf5 install -y tmux dnf-plugins-core
+dnf5 config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+dnf5 install -y brave-browser
+rm -f /etc/yum.repos.d/brave-browser.repo
+dnf5 remove -y dnf-plugins-core
+dnf5 clean all
+rm -rf /var/cache/dnf /var/cache/libdnf5
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
