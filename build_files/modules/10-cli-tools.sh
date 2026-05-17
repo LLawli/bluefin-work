@@ -9,4 +9,4 @@ dnf5 install -y \
   du-dust \
   duf \
   ncdu \
-  tmux \
+  tmux
