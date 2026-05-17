@@ -10,4 +10,3 @@ dnf5 install -y \
   duf \
   ncdu \
   tmux \
-  zellij
