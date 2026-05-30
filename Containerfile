@@ -25,6 +25,10 @@ FROM ghcr.io/ublue-os/bluefin-dx:stable
 
 RUN rm /opt && mkdir /opt
 
+### KERNEL ARGUMENTS (bootc kargs.d drop-ins)
+## Enable amdgpu OverDrive so undervolt/overclock interfaces (pp_od_clk_voltage) exist.
+COPY kargs.d/10-amdgpu-overdrive.toml /usr/lib/bootc/kargs.d/10-amdgpu-overdrive.toml
+
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.

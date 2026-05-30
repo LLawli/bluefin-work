@@ -10,6 +10,7 @@ set -ouex pipefail
 /ctx/modules/50-crypto-tools.sh
 /ctx/modules/60-ruby-build-deps.sh
 /ctx/modules/70-dev-performance.sh
+/ctx/modules/80-lact.sh
 
 #Brave Install
 /ctx/brave_install.sh
